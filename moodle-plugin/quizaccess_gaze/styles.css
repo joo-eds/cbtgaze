@@ -1,0 +1,72 @@
+/* Gaze-CBT CSS Gaze Focus Mode (Moodle 4.3 Boost Compatible) */
+
+/* 1. Clear top header, secondary nav, and footer clutter */
+body#page-mod-quiz-attempt.gaze-cbt-active #page-header,
+body#page-mod-quiz-attempt.gaze-cbt-active nav.navbar,
+body#page-mod-quiz-attempt.gaze-cbt-active .secondary-navigation,
+body#page-mod-quiz-attempt.gaze-cbt-active footer#page-footer,
+body#page-mod-quiz-attempt.gaze-cbt-active .btn-footer-popover,
+body#page-mod-quiz-summary.gaze-cbt-active #page-header,
+body#page-mod-quiz-summary.gaze-cbt-active nav.navbar,
+body#page-mod-quiz-summary.gaze-cbt-active .secondary-navigation,
+body#page-mod-quiz-summary.gaze-cbt-active footer#page-footer,
+body#page-mod-quiz-summary.gaze-cbt-active .btn-footer-popover {
+    display: none !important;
+}
+
+/* 2. Visually hide left/right drawers while preserving .drawer-right DOM nodes for status scraping */
+body#page-mod-quiz-attempt.gaze-cbt-active .drawer.drawer-right,
+body#page-mod-quiz-attempt.gaze-cbt-active .drawer-right-toggle,
+body#page-mod-quiz-attempt.gaze-cbt-active .drawer.drawer-left,
+body#page-mod-quiz-attempt.gaze-cbt-active .drawer-left-toggle,
+body#page-mod-quiz-summary.gaze-cbt-active .drawer.drawer-right,
+body#page-mod-quiz-summary.gaze-cbt-active .drawer-right-toggle,
+body#page-mod-quiz-summary.gaze-cbt-active .drawer.drawer-left,
+body#page-mod-quiz-summary.gaze-cbt-active .drawer-left-toggle {
+    display: none !important;
+}
+
+body#page-mod-quiz-attempt.gaze-cbt-active #page.drawers,
+body#page-mod-quiz-attempt.gaze-cbt-active #page.drawers.show-drawer-right,
+body#page-mod-quiz-attempt.gaze-cbt-active #page.drawers.show-drawer-left,
+body#page-mod-quiz-summary.gaze-cbt-active #page.drawers,
+body#page-mod-quiz-summary.gaze-cbt-active #page.drawers.show-drawer-right,
+body#page-mod-quiz-summary.gaze-cbt-active #page.drawers.show-drawer-left {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body#page-mod-quiz-attempt.gaze-cbt-active #topofscroll.main-inner,
+body#page-mod-quiz-summary.gaze-cbt-active #topofscroll.main-inner {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+/* 3. Center native question card strictly inside the 52% vertical Dead Zone (y: 0.22-0.74) */
+body#page-mod-quiz-attempt.gaze-cbt-active #region-main,
+body#page-mod-quiz-summary.gaze-cbt-active #region-main {
+    max-width: 960px;
+    margin: 0 auto !important;
+    padding-top: 23vh !important;
+    padding-bottom: 28vh !important;
+}
+
+/* 4. Visually hide duplicate timer box while keeping #quiz-time-left in DOM for Status Pill */
+body#page-mod-quiz-attempt.gaze-cbt-active #quiz-timer-wrapper,
+body#page-mod-quiz-summary.gaze-cbt-active #quiz-timer-wrapper {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    margin: 0 !important;
+}
+
+/* 5. Visually hide native Moodle Prev/Next buttons while keeping programmatic .click() active */
+body#page-mod-quiz-attempt.gaze-cbt-active #responseform .submitbtns,
+body#page-mod-quiz-summary.gaze-cbt-active .submitbtns {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
